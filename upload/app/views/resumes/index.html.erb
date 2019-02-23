@@ -1,0 +1,120 @@
+
+
+  
+      
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>film selling</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Unlock" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+   
+   <style>
+   body{
+     background:white;
+   }
+   nav li{
+     text-align:center;
+     
+    padding:20px;
+     display:inline-block;
+   }
+   header{
+     text-align:center;
+     
+     background:blue;
+   }
+   header a{
+     color:black;
+   }
+   footer form{
+      text-align:center;
+     
+    padding:20px;
+     display:inline-block;
+     text-align:center;
+     
+     background:blue;
+
+   }
+
+
+header h1{ font-size:2.5em;
+
+}
+    </style>
+</head>
+<body >
+
+ <div class="container">
+ <header>
+    <h1>online films store</h1>
+        <nav>
+           
+           <li> <a href="index.html">Home</a></li>
+           <li>  <a href="page/about -us.html">About Us</a></li>
+           
+           <li>  <a href="employee.html">contactus</a></li>
+           
+        </nav>
+        </header>
+<div class="container">   
+	<% if !flash[:notice].blank? %>   
+	   <div>   
+	      <%= flash[:notice] %>   
+	   </div>   
+	<% end %>   
+	  
+	<br>   
+	  
+	<%= link_to "New Resume", new_resume_path %>   
+	<br>   
+	<br> 
+    </div>
+    <div class="album py-5 bg-light">
+    <div class="container">
+    <div class="row">
+<% @resumes.each do |resume| %> 
+      
+        <div class="col-md-4">
+          <div class="card mb-4 shadow">
+          
+          <img src="<%= resume.attachment %>" class="card-img-top" alt="card image cap">
+            <div class="card-body">
+              <p class="card-text"><b>title:</b><%= resume.title %><br><b>cathegory:</b><%= resume.cathegory %><br><b>releaseyear:</b><%=resume.releaseyear %><br><b>price:</b><%= resume.price %><br></p>
+             <b> <%= link_to "Download", resume.attachment_url %> </b> 
+            <b><%= link_to "Delete",  resume, method: :delete, confirm: "Are you sure you want to delete #{resume.attachment}?" %></b>
+              </div>
+            </div>
+          </div>
+          <%end%>
+                <form>
+  <div class="form-row align-items-center">
+    <div class="col-auto my-1">
+      <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Choose...</option>
+        <option value="1">korean</option>
+        <option value="2">American</option>
+        <option value="3">Rwandan</option>
+      </select>
+    </div>
+    <div class="col-auto my-1">
+      <div class="custom-control custom-checkbox mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+        <label class="custom-control-label" for="customControlAutosizing">subscribe</label>
+      </div>
+    </div>
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">like</button>
+    </div>
+  </div>
+</form>
+
+        </div>
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  

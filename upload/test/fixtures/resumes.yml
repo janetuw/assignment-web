@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  cathegory: MyString
+  releaseyear: 9.99
+  price: 9.99
+  attachment: MyString
+
+two:
+  title: MyString
+  cathegory: MyString
+  releaseyear: 9.99
+  price: 9.99
+  attachment: MyString
